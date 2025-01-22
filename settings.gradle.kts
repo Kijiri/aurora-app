@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "aurora"
 include(":app")
+ 
