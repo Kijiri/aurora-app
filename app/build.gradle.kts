@@ -50,7 +50,7 @@ dependencies {
     
     implementation(libs.room.runtime)
     annotationProcessor(libs.room.compiler)
-    implementation (libs.desugar.jdk.libs)
+
     coreLibraryDesugaring(libs.desugar.jdk.libs.v203)
     
 }
