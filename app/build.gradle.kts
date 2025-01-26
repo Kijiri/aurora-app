@@ -28,6 +28,7 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+        isCoreLibraryDesugaringEnabled = true
     }
     buildFeatures {
         viewBinding = true
@@ -49,5 +50,7 @@ dependencies {
     
     implementation(libs.room.runtime)
     annotationProcessor(libs.room.compiler)
+    implementation (libs.desugar.jdk.libs)
+    coreLibraryDesugaring(libs.desugar.jdk.libs.v203)
     
 }
