@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ConversationWithRelations {
     @Embedded
-    private Conversation conversation;
+    public Conversation conversation;
 
     @Relation(
             entity = User.class,

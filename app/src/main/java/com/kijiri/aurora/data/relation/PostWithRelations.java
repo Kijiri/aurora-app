@@ -23,19 +23,6 @@ public class PostWithRelations {
     public Post post;
 
     @Relation(
-            entity = Comment.class,
-            parentColumn = "id",
-            entityColumn = "id",
-            associateBy = @Junction(
-                    value = PostComment.class,
-                    parentColumn = "post_id",
-                    entityColumn = "comment_id"
-            )
-    )
-    public List<Comment> comments;
-
-
-    @Relation(
             parentColumn = "id",
             entityColumn = "post_id"
     )
@@ -76,10 +63,4 @@ public class PostWithRelations {
             )
     )
     public List<Tag> tags;
-    
-    @Relation(
-            parentColumn = "id",
-            entityColumn = "post_id"
-    )
-    public List<PostLike> likes;
 }
