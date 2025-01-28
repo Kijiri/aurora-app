@@ -39,10 +39,14 @@ public class ConversationParticipant {
     private long conversationId;
     @ColumnInfo(name = "conversation_role")
     private ConversationRole conversationRole;
+    
+    @ColumnInfo(name = "is_read")
+    private boolean isRead;
 
-    public ConversationParticipant(long userId, long conversationId, ConversationRole conversationRole) {
+    public ConversationParticipant(long userId, long conversationId, ConversationRole conversationRole, boolean isRead) {
         this.userId = userId;
         this.conversationId = conversationId;
         this.conversationRole = conversationRole;
+        this.isRead = isRead;
     }
 }

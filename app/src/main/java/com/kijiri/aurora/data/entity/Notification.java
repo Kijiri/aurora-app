@@ -42,11 +42,15 @@ public class Notification {
     @ColumnInfo(name = "notification_id")
     private long notificationId;
 
-    public Notification(long id, long userId, @NonNull NotificationType notificationType, @NonNull Instant createdAt, long notificationId) {
+    @ColumnInfo(name = "is_read")
+    private boolean isRead;
+
+    public Notification(long id, long userId, @NonNull NotificationType notificationType, @NonNull Instant createdAt, long notificationId, boolean isRead) {
         this.id = id;
         this.userId = userId;
         this.notificationType = notificationType;
         this.createdAt = createdAt;
         this.notificationId = notificationId;
+        this.isRead = isRead;
     }
 }
