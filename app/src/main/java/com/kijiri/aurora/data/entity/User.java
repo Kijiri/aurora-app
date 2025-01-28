@@ -8,6 +8,11 @@ import androidx.room.PrimaryKey;
 
 import java.time.Instant;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 @Entity(
         indices = {
                 @Index(value = {"last_name", "first_name"}),
@@ -58,72 +63,5 @@ public class User {
         this.avatarUrl = avatarUrl;
         this.createdAt = createdAt;
     }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    @NonNull
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(@NonNull String firstName) {
-        this.firstName = firstName;
-    }
-
-    @NonNull
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(@NonNull String lastName) {
-        this.lastName = lastName;
-    }
-
-    @NonNull
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(@NonNull String userName) {
-        this.userName = userName;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public String getBio() {
-        return bio;
-    }
-
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
-
-    public String getAvatarUrl() {
-        return avatarUrl;
-    }
-
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
-    }
-
-    @NonNull
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(@NonNull Instant createdAt) {
-        this.createdAt = createdAt;
-    }
+    
 }

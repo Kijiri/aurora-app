@@ -9,6 +9,11 @@ import androidx.room.PrimaryKey;
 
 import java.time.Instant;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity(
         foreignKeys = {
                 @ForeignKey(
@@ -45,54 +50,6 @@ public class Message {
         this.senderId = senderId;
         this.text = text;
         this.createdAt = createdAt;
-        this.edited = edited;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getConversationId() {
-        return conversationId;
-    }
-
-    public void setConversationId(long conversationId) {
-        this.conversationId = conversationId;
-    }
-
-    public long getSenderId() {
-        return senderId;
-    }
-
-    public void setSenderId(long senderId) {
-        this.senderId = senderId;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public boolean isEdited() {
-        return edited;
-    }
-
-    public void setEdited(boolean edited) {
         this.edited = edited;
     }
 }

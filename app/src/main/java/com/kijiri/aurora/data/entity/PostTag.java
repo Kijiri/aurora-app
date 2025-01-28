@@ -6,6 +6,11 @@ import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 @Entity(
         foreignKeys = {
                 @ForeignKey(
@@ -36,30 +41,6 @@ public class PostTag {
     public PostTag(long id, long postId, long tagId) {
         this.id = id;
         this.postId = postId;
-        this.tagId = tagId;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getPostId() {
-        return postId;
-    }
-
-    public void setPostId(long postId) {
-        this.postId = postId;
-    }
-
-    public long getTagId() {
-        return tagId;
-    }
-
-    public void setTagId(long tagId) {
         this.tagId = tagId;
     }
 }

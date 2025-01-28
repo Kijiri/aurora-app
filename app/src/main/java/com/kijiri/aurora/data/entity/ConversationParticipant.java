@@ -7,6 +7,11 @@ import androidx.room.Index;
 
 import com.kijiri.aurora.data.enums.ConversationRole;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity(
         primaryKeys = {"user_id", "conversation_id"},
         foreignKeys = {
@@ -38,30 +43,6 @@ public class ConversationParticipant {
     public ConversationParticipant(long userId, long conversationId, ConversationRole conversationRole) {
         this.userId = userId;
         this.conversationId = conversationId;
-        this.conversationRole = conversationRole;
-    }
-
-    public long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(long userId) {
-        this.userId = userId;
-    }
-
-    public long getConversationId() {
-        return conversationId;
-    }
-
-    public void setConversationId(long conversationId) {
-        this.conversationId = conversationId;
-    }
-
-    public ConversationRole getConversationRole() {
-        return conversationRole;
-    }
-
-    public void setConversationRole(ConversationRole conversationRole) {
         this.conversationRole = conversationRole;
     }
 }

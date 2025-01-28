@@ -9,6 +9,11 @@ import androidx.room.PrimaryKey;
 
 import java.time.Instant;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity(
         foreignKeys = {
                 @ForeignKey(
@@ -44,38 +49,6 @@ public class PostLike {
         this.id = id;
         this.postId = postId;
         this.userId = userId;
-        this.createdAt = createdAt;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getPostId() {
-        return postId;
-    }
-
-    public void setPostId(long postId) {
-        this.postId = postId;
-    }
-
-    public long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(long userId) {
-        this.userId = userId;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
         this.createdAt = createdAt;
     }
 }

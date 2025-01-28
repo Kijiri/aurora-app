@@ -9,6 +9,11 @@ import androidx.room.PrimaryKey;
 
 import java.time.Instant;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity(
         foreignKeys = {
                 @ForeignKey(
@@ -49,38 +54,6 @@ public class Follow {
         this.id = id;
         this.followerId = followerId;
         this.followedId = followedId;
-        this.createdAt = createdAt;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getFollowerId() {
-        return followerId;
-    }
-
-    public void setFollowerId(long followerId) {
-        this.followerId = followerId;
-    }
-
-    public long getFollowedId() {
-        return followedId;
-    }
-
-    public void setFollowedId(long followedId) {
-        this.followedId = followedId;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
         this.createdAt = createdAt;
     }
 }

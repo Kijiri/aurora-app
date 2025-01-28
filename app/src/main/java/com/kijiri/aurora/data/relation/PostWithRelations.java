@@ -26,13 +26,7 @@ public class PostWithRelations {
             parentColumn = "id",
             entityColumn = "post_id"
     )
-    public List<PostContent> contentList;
-
-    @Relation(
-            parentColumn = "id",
-            entityColumn = "post_id"
-    )
-    public List<PostMedia> postMediaList;
+    public List<PostSectionWithRelations> sections;
     
     @Relation(
             parentColumn = "user_id",

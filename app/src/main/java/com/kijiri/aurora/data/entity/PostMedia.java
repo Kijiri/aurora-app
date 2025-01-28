@@ -5,12 +5,17 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity(
         foreignKeys = {
                 @ForeignKey(
-                        entity = Post.class,
+                        entity = PostSection.class,
                         parentColumns = "id",
-                        childColumns = "post_id",
+                        childColumns = "post_section_id",
                         onDelete = ForeignKey.CASCADE
                 ),
                 @ForeignKey(
@@ -24,8 +29,8 @@ import androidx.room.PrimaryKey;
 public class PostMedia {
     @PrimaryKey
     private long id;
-    @ColumnInfo(name = "post_id")
-    private long postId;
+    @ColumnInfo(name = "post_section_id")
+    private long postSectionId;
     @ColumnInfo(name = "media_id")
     private long mediaId;
     
@@ -38,69 +43,13 @@ public class PostMedia {
     private int length;
     private int height;
 
-    public PostMedia(long id, long postId, long mediaId, int row, int col, int length, int height) {
+    public PostMedia(long id, long postSectionId, long mediaId, int row, int col, int length, int height) {
         this.id = id;
-        this.postId = postId;
+        this.postSectionId = postSectionId;
         this.mediaId = mediaId;
         this.row = row;
         this.col = col;
         this.length = length;
-        this.height = height;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getPostId() {
-        return postId;
-    }
-
-    public void setPostId(long postId) {
-        this.postId = postId;
-    }
-
-    public long getMediaId() {
-        return mediaId;
-    }
-
-    public void setMediaId(long mediaId) {
-        this.mediaId = mediaId;
-    }
-
-    public int getRow() {
-        return row;
-    }
-
-    public void setRow(int row) {
-        this.row = row;
-    }
-
-    public int getCol() {
-        return col;
-    }
-
-    public void setCol(int col) {
-        this.col = col;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
         this.height = height;
     }
 }

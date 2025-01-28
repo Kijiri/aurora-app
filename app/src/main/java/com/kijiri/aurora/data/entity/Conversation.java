@@ -7,6 +7,11 @@ import androidx.room.PrimaryKey;
 
 import java.time.Instant;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity
 public class Conversation {
     
@@ -26,40 +31,6 @@ public class Conversation {
     public Conversation(long id, @NonNull String title, @NonNull Instant createdAt) {
         this.id = id;
         this.title = title;
-        this.createdAt = createdAt;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    @NonNull
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(@NonNull String title) {
-        this.title = title;
-    }
-
-    public String getAvatarUrl() {
-        return avatarUrl;
-    }
-
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
-    }
-
-    @NonNull
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(@NonNull Instant createdAt) {
         this.createdAt = createdAt;
     }
 }

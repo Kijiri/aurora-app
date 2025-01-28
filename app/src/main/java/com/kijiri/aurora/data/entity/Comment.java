@@ -8,6 +8,11 @@ import androidx.room.PrimaryKey;
 
 import java.time.Instant;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity(
         foreignKeys = @ForeignKey(
                 entity = User.class,
@@ -38,55 +43,5 @@ public class Comment {
         this.text = text;
         this.createdAt = createdAt;
         this.id = id;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(long userId) {
-        this.userId = userId;
-    }
-
-    public Long getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Long parentId) {
-        this.parentId = parentId;
-    }
-
-    @NonNull
-    public String getText() {
-        return text;
-    }
-
-    public void setText(@NonNull String text) {
-        this.text = text;
-    }
-
-    @NonNull
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(@NonNull Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public boolean isEdited() {
-        return isEdited;
-    }
-
-    public void setEdited(boolean edited) {
-        isEdited = edited;
     }
 }

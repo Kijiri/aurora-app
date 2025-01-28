@@ -7,6 +7,11 @@ import androidx.room.PrimaryKey;
 
 import com.kijiri.aurora.data.enums.MediaType;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity
 public class Media {
     @PrimaryKey
@@ -18,23 +23,6 @@ public class Media {
 
     public Media(long id, @NonNull MediaType mediaType) {
         this.id = id;
-        this.mediaType = mediaType;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    @NonNull
-    public MediaType getMediaType() {
-        return mediaType;
-    }
-
-    public void setMediaType(@NonNull MediaType mediaType) {
         this.mediaType = mediaType;
     }
 }

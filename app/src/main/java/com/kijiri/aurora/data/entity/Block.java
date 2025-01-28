@@ -9,6 +9,11 @@ import androidx.room.PrimaryKey;
 
 import java.time.Instant;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity(
         foreignKeys = {
                 @ForeignKey(
@@ -50,39 +55,6 @@ public class Block {
         this.id = id;
         this.blockerId = blockerId;
         this.blockedId = blockedId;
-        this.createdAt = createdAt;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getBlockerId() {
-        return blockerId;
-    }
-
-    public void setBlockerId(long blockerId) {
-        this.blockerId = blockerId;
-    }
-
-    public long getBlockedId() {
-        return blockedId;
-    }
-
-    public void setBlockedId(long blockedId) {
-        this.blockedId = blockedId;
-    }
-
-    @NonNull
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(@NonNull Instant createdAt) {
         this.createdAt = createdAt;
     }
 }

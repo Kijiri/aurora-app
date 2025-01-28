@@ -10,6 +10,11 @@ import com.kijiri.aurora.data.enums.NotificationType;
 
 import java.time.Instant;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity(
         foreignKeys = @ForeignKey(
                 entity = User.class,
@@ -42,48 +47,6 @@ public class Notification {
         this.userId = userId;
         this.notificationType = notificationType;
         this.createdAt = createdAt;
-        this.notificationId = notificationId;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(long userId) {
-        this.userId = userId;
-    }
-
-    @NonNull
-    public NotificationType getNotificationType() {
-        return notificationType;
-    }
-
-    public void setNotificationType(@NonNull NotificationType notificationType) {
-        this.notificationType = notificationType;
-    }
-
-    @NonNull
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(@NonNull Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public long getNotificationId() {
-        return notificationId;
-    }
-
-    public void setNotificationId(long notificationId) {
         this.notificationId = notificationId;
     }
 }
