@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.kijiri.aurora.R;
 import com.kijiri.aurora.databinding.FragmentLoginBinding;
@@ -34,6 +35,8 @@ public class LoginFragment extends Fragment {
         createAccountLink.setOnClickListener(view -> {
             // TODO: Navigate to create account fragment
             Log.d("LoginFragment", "Create account link clicked");
+            NavHostFragment.findNavController(LoginFragment.this)
+                            .navigate(R.id.action_loginFragment_to_createAccountFragment);
         });
 
         signInButton.setOnClickListener(view -> {
