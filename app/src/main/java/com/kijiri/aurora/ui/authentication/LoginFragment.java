@@ -16,6 +16,11 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.kijiri.aurora.R;
 import com.kijiri.aurora.databinding.FragmentLoginBinding;
+import com.kijiri.aurora.service.AuthClient;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginFragment extends Fragment {
 
@@ -33,24 +38,43 @@ public class LoginFragment extends Fragment {
         Button signInButton = root.findViewById(R.id.signInButton);
 
         createAccountLink.setOnClickListener(view -> {
-            // TODO: Navigate to create account fragment
             Log.d("LoginFragment", "Create account link clicked");
             NavHostFragment.findNavController(LoginFragment.this)
-                            .navigate(R.id.action_loginFragment_to_createAccountFragment);
+                    .navigate(R.id.action_loginFragment_to_createAccountFragment);
         });
 
+        // TODO: Authenticate user with email and password
         signInButton.setOnClickListener(view -> {
             String email = emailInput.getText().toString();
             String password = passwordInput.getText().toString();
 
-            // TODO: Authenticate user with email and password
+            Call<AuthenticationResponse> login = AuthClient.getInstance().getApiService().login(new LoginUser(email, password));
+            login.enqueue(new Callback<AuthenticationResponse>() {
+                @Override
+                public void onResponse(Call<AuthenticationResponse> call, Response<AuthenticationResponse> response) {
+                    Log.i("LoginFragment", "Auth response: " + response.body().getMessage());
+                    Log.i("LoginFragment", "Auth access token: " + response.body().getAccessToken());
+                    Log.i("LoginFragment", "Auth refresh token: " + response.body().getRefreshToken());
+                }
+
+                @Override
+                public void onFailure(Call<AuthenticationResponse> call, Throwable t) {
+
+                }
+            });
             Log.d(
                     "LoginFragment",
-                "Sign in button clicked with email: " + email + " and password: " + password
+                    "Sign in button clicked with email: " + email + " and password: " + password
             );
 
         });
 
         return root;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }

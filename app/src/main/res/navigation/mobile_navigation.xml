@@ -25,9 +25,9 @@
 
     <fragment
         android:id="@+id/navigation_create_account"
-        android:name="com.kijiri.aurora.ui.authentication.CreateAccountFragment"
+        android:name="com.kijiri.aurora.ui.authentication.RegisterFragment"
         android:label="Create Account"
-        tools:layout="@layout/fragment_create_account"/>
+        tools:layout="@layout/fragment_register"/>
         <action
             android:id="@+id/action_createAccountFragment_to_loginFragment"
             app:destination="@id/navigation_login"/>

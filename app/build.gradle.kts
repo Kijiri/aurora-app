@@ -43,11 +43,17 @@ dependencies {
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
     implementation(libs.navigation.runtime)
+
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson) // For JSON parsing
+    implementation(libs.okhttp) // OkHttp
+    implementation(libs.logging.interceptor) // For logging (optional)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    
+
     implementation(libs.room.runtime)
     annotationProcessor(libs.room.compiler)
-    
+
 }
